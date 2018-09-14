@@ -204,7 +204,6 @@ function init([moviesMetaData, moviesKeywords, ratings]) {
   // console.log("End ...");
 
   // MAIN ROUTES
-  app.get("/", (req, res) => res.send("Movie recomendation System is running"));
   app.get("/predict", async (req, res) => {
     try {
       let q = req.query.q;
@@ -262,7 +261,7 @@ function init([moviesMetaData, moviesKeywords, ratings]) {
   });
   console.log("Route /predict now available");
 }
-
+app.get("/", (req, res) => res.send("Movie recomendation System is running"));
 app.listen(3000, () => console.log("Example app listening on port 3000!"));
 
 // Utility
