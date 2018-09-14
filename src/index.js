@@ -260,9 +260,10 @@ function init([moviesMetaData, moviesKeywords, ratings]) {
       });
     }
   });
-
-  app.listen(3000, () => console.log("Example app listening on port 3000!"));
+  console.log("Route /predict now available");
 }
+
+app.listen(3000, () => console.log("Example app listening on port 3000!"));
 
 // Utility
 
