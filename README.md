@@ -12,7 +12,5 @@ A recommender system in JavaScript built with NodeJs. It uses the popular [Movie
 
 ## Installation
 
-* `git clone git@github.com:javascript-machine-learning/movielens-recommender-system-javascript.git`
-* `cd movielens-recommender-system-javascript`
 * `npm install`
 * `npm start`
