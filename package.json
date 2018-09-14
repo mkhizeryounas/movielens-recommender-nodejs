@@ -1,8 +1,11 @@
 {
-  "name": "recommender-system-javascript-movielens",
+  "name": "movielens-nodejs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "10.0.0"
+  },
   "scripts": {
     "start": "node src/index.js --exec babel-node --presets es2015,stage-2",
     "dev": "nodemon src/index.js --exec babel-node --presets es2015,stage-2",
