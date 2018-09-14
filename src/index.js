@@ -204,6 +204,20 @@ function init([moviesMetaData, moviesKeywords, ratings]) {
   // console.log("End ...");
 
   // MAIN ROUTES
+  console.log("(2) Computing User-Based Cosine Similarity \n");
+  const cfUserBasedRecommendation = predictWithCfUserBased(
+    ratingsGroupedByUser,
+    ratingsGroupedByMovie,
+    ME_USER_ID
+  );
+
+  console.log("(3) Computing Item-Based Cosine Similarity \n");
+  const cfItemBasedRecommendation = predictWithCfItemBased(
+    ratingsGroupedByUser,
+    ratingsGroupedByMovie,
+    ME_USER_ID
+  );
+
   app.get("/predict", async (req, res) => {
     try {
       let q = req.query.q;
@@ -214,20 +228,6 @@ function init([moviesMetaData, moviesKeywords, ratings]) {
         X,
         MOVIES_IN_LIST,
         q || "Batman Begins"
-      );
-
-      console.log("(2) Computing User-Based Cosine Similarity \n");
-      const cfUserBasedRecommendation = predictWithCfUserBased(
-        ratingsGroupedByUser,
-        ratingsGroupedByMovie,
-        ME_USER_ID
-      );
-
-      console.log("(3) Computing Item-Based Cosine Similarity \n");
-      const cfItemBasedRecommendation = predictWithCfItemBased(
-        ratingsGroupedByUser,
-        ratingsGroupedByMovie,
-        ME_USER_ID
       );
 
       res.json({
