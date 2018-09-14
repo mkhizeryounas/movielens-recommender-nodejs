@@ -133,14 +133,14 @@ function init([moviesMetaData, moviesKeywords, ratings]) {
   // console.log("(A) Linear Regression Prediction ... \n");
 
   // console.log("(1) Training \n");
-  const meUserRatings = ratingsGroupedByUser[ME_USER_ID];
+  // const meUserRatings = ratingsGroupedByUser[ME_USER_ID];
   // const linearRegressionBasedRecommendation = predictWithLinearRegression(
   //   X,
   //   MOVIES_IN_LIST,
   //   meUserRatings
   // );
 
-  console.log("(2) Prediction \n");
+  // console.log("(2) Prediction \n");
 
   /* ------------------------- */
   //  Content-Based Prediction //
@@ -259,10 +259,9 @@ function init([moviesMetaData, moviesKeywords, ratings]) {
       });
     }
   });
-  console.log("Route /predict now available");
+  app.get("/", (req, res) => res.send("Movie recomendation System is running"));
+  app.listen(3000, () => console.log("Example app listening on port 3000!"));
 }
-app.get("/", (req, res) => res.send("Movie recomendation System is running"));
-app.listen(3000, () => console.log("Example app listening on port 3000!"));
 
 // Utility
 
